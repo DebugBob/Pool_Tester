@@ -1,0 +1,13 @@
+{
+  "name": "name",
+  "time": "time",
+  "date": "date",
+  "technician": "technician",
+  "pool": {
+    "chlorine": "pool.chlorine",
+    "ph": "pool.ph",
+    "alkalinity": "pool.alkalinity",
+    "hardness": "pool.hardness"
+  },
+  "comments": [{ "first": "comments[0].first" }]
+}
