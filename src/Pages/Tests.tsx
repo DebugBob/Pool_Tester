@@ -3,7 +3,7 @@ import CustomerForm from "../Components/CustomerForm";
 
 const Tests = () => {
   return (
-    <div className="flex grow">
+    <div className="flex h-screen">
       <Sidebar />
       <main className="flex-1 py-20 flex items-center justify-center">
         <CustomerForm />

@@ -15,7 +15,7 @@ const Sidebar = () => {
       <button className="bg-gray-50 py-4 w-full border-b cursor-pointer font-semibold border-gray-200 hover:bg-gray-200 focus:bg-blue-200 focus:border-l-4 focus:border-blue-300">
         Create new
       </button>
-      <div className="bg-gray-50 h-full w-full rounded-b-xl overflow-auto overscroll-contain active:cursor-grab">
+      <div className="bg-gray-50 h-full w-full rounded-b-xl overflow-y-scroll overscroll-contain active:cursor-grab">
         <div>
           {filteredData.map((item, idx) => (
             <button
