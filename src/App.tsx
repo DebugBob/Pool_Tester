@@ -11,11 +11,11 @@ function App() {
         title="Modal Test"
         contents="This is a prototype; entered data will not be saved."
       />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Navbar />
         <div className="flex"></div>
         <Routes>
-          <Route path="/Pool_Tester" element={<Tests />} />
+          <Route path="/" element={<Tests />} />
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </BrowserRouter>
