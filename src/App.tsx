@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Tests from "./Pages/Tests";
 import Schedule from "./Pages/Schedule";
@@ -11,14 +11,14 @@ function App() {
         title="Modal Test"
         contents="This is a prototype; entered data will not be saved."
       />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <Navbar />
         <div className="flex"></div>
         <Routes>
           <Route path="/" element={<Tests />} />
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
