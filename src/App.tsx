@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <div className="flex"></div>
         <Routes>
-          <Route path="/" element={<Tests />} />
+          <Route path="/Pool_Tester" element={<Tests />} />
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </BrowserRouter>
