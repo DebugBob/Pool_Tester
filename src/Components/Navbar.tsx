@@ -8,7 +8,7 @@ const Navbar = () => {
       </div>
       <div className="flex gap-10 text-xl h-full">
         <NavLink
-          to="/"
+          to="/Pool_Tester"
           className={({ isActive }) =>
             `flex items-center px-4 ${
               isActive
