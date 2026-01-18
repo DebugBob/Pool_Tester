@@ -1,29 +1,42 @@
-import React, { useState } from "react";
-import dummy from "../Schema/dummy.json";
+import React, { useState, useEffect } from "react";
 
-const CustomerForm = () => {
-  const initial_state = {
-    name: "",
-    time: "",
-    date: "",
-    technician: "",
-    pool: {
-      chlorine: "",
-      ph: "",
-      alkalinity: "",
-      hardness: "",
-    },
-    comments: [],
-  };
+interface CustomerFormProps {
+  onAddCustomer: (customer: any) => void;
+  selectedCustomer?: any;
+}
 
+const initial_state = {
+  name: "",
+  time: "",
+  date: "",
+  technician: "",
+  pool: {
+    chlorine: "",
+    ph: "",
+    alkalinity: "",
+    hardness: "",
+  },
+  comments: [],
+};
+
+const CustomerForm = ({
+  onAddCustomer,
+  selectedCustomer,
+}: CustomerFormProps) => {
   const [customer_data, set_customer_data] = useState(initial_state);
+
+  useEffect(() => {
+    if (selectedCustomer) {
+      set_customer_data(selectedCustomer);
+    } else {
+      set_customer_data(initial_state);
+    }
+  }, [selectedCustomer]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Note: Browsers cannot write directly to the file system (dummy.json).
-    // We simulate the "push" by creating a new array with the new entry appended.
-    const updated_data = [...dummy, customer_data];
-    console.log("Simulated Push:", updated_data);
+    onAddCustomer(customer_data);
+    set_customer_data(initial_state);
   };
 
   const handleChange = (
